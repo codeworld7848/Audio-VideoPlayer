@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.anand.core.models.Music
 import com.anand.inventory.domain.repository.InventoryRepository
 import com.anand.player.service.PlaybackClient
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -58,8 +59,10 @@ class MusicDetailViewModel @Inject constructor(
                     }
                     if (currentIndex != -1) {
                         _uiState.update { state ->
-                            state.copy(currentIndex = currentIndex,
-                                currentPosition = 0)
+                            state.copy(
+                                currentIndex = currentIndex,
+                                currentPosition = 0
+                            )
                         }
                     }
                 }
@@ -85,8 +88,10 @@ class MusicDetailViewModel @Inject constructor(
                         }
 
                         _uiState.update {
-                            it.copy(songList = list, currentIndex = index, isInitialized = true,
-                                currentPosition = 0)
+                            it.copy(
+                                songList = list, currentIndex = index, isInitialized = true,
+                                currentPosition = 0
+                            )
                         }
                     }
                 }

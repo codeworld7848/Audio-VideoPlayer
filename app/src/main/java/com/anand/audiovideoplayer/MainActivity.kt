@@ -1,5 +1,6 @@
 package com.anand.audiovideoplayer
 
+import android.Manifest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -24,6 +25,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        requestPermissions(arrayOf(Manifest.permission.READ_MEDIA_AUDIO),0)
         setContent {
             val navHostController = rememberNavController()
             AudioVideoPlayerTheme {
